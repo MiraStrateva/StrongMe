@@ -1,0 +1,16 @@
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\bin\Debug\netstandard2.1\StrongMe.Web.ViewModels.deps.json
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\bin\Debug\netstandard2.1\StrongMe.Web.ViewModels.dll
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\bin\Debug\netstandard2.1\StrongMe.Web.ViewModels.pdb
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\bin\Debug\netstandard2.1\StrongMe.Data.Common.dll
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\bin\Debug\netstandard2.1\StrongMe.Data.Models.dll
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\bin\Debug\netstandard2.1\StrongMe.Services.Mapping.dll
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\bin\Debug\netstandard2.1\StrongMe.Data.Models.pdb
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\bin\Debug\netstandard2.1\StrongMe.Services.Mapping.pdb
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\bin\Debug\netstandard2.1\StrongMe.Data.Common.pdb
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\obj\Debug\netstandard2.1\StrongMe.Web.ViewModels.csprojAssemblyReference.cache
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\obj\Debug\netstandard2.1\StrongMe.Web.ViewModels.AssemblyInfoInputs.cache
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\obj\Debug\netstandard2.1\StrongMe.Web.ViewModels.AssemblyInfo.cs
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\obj\Debug\netstandard2.1\StrongMe.Web.ViewModels.csproj.CoreCompileInputs.cache
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\obj\Debug\netstandard2.1\StrongMe.Web.ViewModels.csproj.CopyComplete
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\obj\Debug\netstandard2.1\StrongMe.Web.ViewModels.dll
+D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.ViewModels\obj\Debug\netstandard2.1\StrongMe.Web.ViewModels.pdb

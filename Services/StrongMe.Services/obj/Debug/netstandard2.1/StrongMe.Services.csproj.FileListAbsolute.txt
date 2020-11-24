@@ -1,0 +1,9 @@
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services\bin\Debug\netstandard2.1\StrongMe.Services.deps.json
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services\bin\Debug\netstandard2.1\StrongMe.Services.dll
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services\bin\Debug\netstandard2.1\StrongMe.Services.pdb
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services\obj\Debug\netstandard2.1\StrongMe.Services.csprojAssemblyReference.cache
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services\obj\Debug\netstandard2.1\StrongMe.Services.AssemblyInfoInputs.cache
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services\obj\Debug\netstandard2.1\StrongMe.Services.AssemblyInfo.cs
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services\obj\Debug\netstandard2.1\StrongMe.Services.csproj.CoreCompileInputs.cache
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services\obj\Debug\netstandard2.1\StrongMe.Services.dll
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services\obj\Debug\netstandard2.1\StrongMe.Services.pdb

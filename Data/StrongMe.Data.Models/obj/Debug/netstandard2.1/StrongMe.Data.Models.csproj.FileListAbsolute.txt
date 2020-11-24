@@ -1,0 +1,12 @@
+D:\Mira\SoftUni\.NetCore\StrongMe\Data\StrongMe.Data.Models\bin\Debug\netstandard2.1\StrongMe.Data.Models.deps.json
+D:\Mira\SoftUni\.NetCore\StrongMe\Data\StrongMe.Data.Models\bin\Debug\netstandard2.1\StrongMe.Data.Models.dll
+D:\Mira\SoftUni\.NetCore\StrongMe\Data\StrongMe.Data.Models\bin\Debug\netstandard2.1\StrongMe.Data.Models.pdb
+D:\Mira\SoftUni\.NetCore\StrongMe\Data\StrongMe.Data.Models\bin\Debug\netstandard2.1\StrongMe.Data.Common.dll
+D:\Mira\SoftUni\.NetCore\StrongMe\Data\StrongMe.Data.Models\bin\Debug\netstandard2.1\StrongMe.Data.Common.pdb
+D:\Mira\SoftUni\.NetCore\StrongMe\Data\StrongMe.Data.Models\obj\Debug\netstandard2.1\StrongMe.Data.Models.csprojAssemblyReference.cache
+D:\Mira\SoftUni\.NetCore\StrongMe\Data\StrongMe.Data.Models\obj\Debug\netstandard2.1\StrongMe.Data.Models.AssemblyInfoInputs.cache
+D:\Mira\SoftUni\.NetCore\StrongMe\Data\StrongMe.Data.Models\obj\Debug\netstandard2.1\StrongMe.Data.Models.AssemblyInfo.cs
+D:\Mira\SoftUni\.NetCore\StrongMe\Data\StrongMe.Data.Models\obj\Debug\netstandard2.1\StrongMe.Data.Models.csproj.CoreCompileInputs.cache
+D:\Mira\SoftUni\.NetCore\StrongMe\Data\StrongMe.Data.Models\obj\Debug\netstandard2.1\StrongMe.Data.Models.csproj.CopyComplete
+D:\Mira\SoftUni\.NetCore\StrongMe\Data\StrongMe.Data.Models\obj\Debug\netstandard2.1\StrongMe.Data.Models.dll
+D:\Mira\SoftUni\.NetCore\StrongMe\Data\StrongMe.Data.Models\obj\Debug\netstandard2.1\StrongMe.Data.Models.pdb

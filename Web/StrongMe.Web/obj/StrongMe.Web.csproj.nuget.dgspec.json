@@ -1,0 +1,859 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web\\StrongMe.Web.csproj": {}
+  },
+  "projects": {
+    "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Common\\StrongMe.Data.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Common\\StrongMe.Data.Common.csproj",
+        "projectName": "StrongMe.Data.Common",
+        "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Common\\StrongMe.Data.Common.csproj",
+        "packagesPath": "C:\\Users\\Pavilion\\.nuget\\packages\\",
+        "outputPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Pavilion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Models\\StrongMe.Data.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Models\\StrongMe.Data.Models.csproj",
+        "projectName": "StrongMe.Data.Models",
+        "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Models\\StrongMe.Data.Models.csproj",
+        "packagesPath": "C:\\Users\\Pavilion\\.nuget\\packages\\",
+        "outputPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Pavilion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Common\\StrongMe.Data.Common.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Common\\StrongMe.Data.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data\\StrongMe.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data\\StrongMe.Data.csproj",
+        "projectName": "StrongMe.Data",
+        "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data\\StrongMe.Data.csproj",
+        "packagesPath": "C:\\Users\\Pavilion\\.nuget\\packages\\",
+        "outputPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Pavilion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Common\\StrongMe.Data.Common.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Common\\StrongMe.Data.Common.csproj"
+              },
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Models\\StrongMe.Data.Models.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Models\\StrongMe.Data.Models.csproj"
+              },
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\StrongMe.Common\\StrongMe.Common.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\StrongMe.Common\\StrongMe.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Data\\StrongMe.Services.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Data\\StrongMe.Services.Data.csproj",
+        "projectName": "StrongMe.Services.Data",
+        "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Data\\StrongMe.Services.Data.csproj",
+        "packagesPath": "C:\\Users\\Pavilion\\.nuget\\packages\\",
+        "outputPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Pavilion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Common\\StrongMe.Data.Common.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Common\\StrongMe.Data.Common.csproj"
+              },
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Models\\StrongMe.Data.Models.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Models\\StrongMe.Data.Models.csproj"
+              },
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Mapping\\StrongMe.Services.Mapping.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Mapping\\StrongMe.Services.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Mapping\\StrongMe.Services.Mapping.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Mapping\\StrongMe.Services.Mapping.csproj",
+        "projectName": "StrongMe.Services.Mapping",
+        "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Mapping\\StrongMe.Services.Mapping.csproj",
+        "packagesPath": "C:\\Users\\Pavilion\\.nuget\\packages\\",
+        "outputPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Mapping\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Pavilion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Messaging\\StrongMe.Services.Messaging.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Messaging\\StrongMe.Services.Messaging.csproj",
+        "projectName": "StrongMe.Services.Messaging",
+        "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Messaging\\StrongMe.Services.Messaging.csproj",
+        "packagesPath": "C:\\Users\\Pavilion\\.nuget\\packages\\",
+        "outputPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Messaging\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Pavilion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Sendgrid": {
+              "target": "Package",
+              "version": "[9.21.2, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services\\StrongMe.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services\\StrongMe.Services.csproj",
+        "projectName": "StrongMe.Services",
+        "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services\\StrongMe.Services.csproj",
+        "packagesPath": "C:\\Users\\Pavilion\\.nuget\\packages\\",
+        "outputPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Pavilion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\StrongMe.Common\\StrongMe.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\StrongMe.Common\\StrongMe.Common.csproj",
+        "projectName": "StrongMe.Common",
+        "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\StrongMe.Common\\StrongMe.Common.csproj",
+        "packagesPath": "C:\\Users\\Pavilion\\.nuget\\packages\\",
+        "outputPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\StrongMe.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Pavilion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web.Infrastructure\\StrongMe.Web.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web.Infrastructure\\StrongMe.Web.Infrastructure.csproj",
+        "projectName": "StrongMe.Web.Infrastructure",
+        "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web.Infrastructure\\StrongMe.Web.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Pavilion\\.nuget\\packages\\",
+        "outputPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Pavilion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web.ViewModels\\StrongMe.Web.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web.ViewModels\\StrongMe.Web.ViewModels.csproj",
+        "projectName": "StrongMe.Web.ViewModels",
+        "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web.ViewModels\\StrongMe.Web.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\Pavilion\\.nuget\\packages\\",
+        "outputPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web.ViewModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Pavilion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Models\\StrongMe.Data.Models.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Models\\StrongMe.Data.Models.csproj"
+              },
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Mapping\\StrongMe.Services.Mapping.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Mapping\\StrongMe.Services.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web\\StrongMe.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web\\StrongMe.Web.csproj",
+        "projectName": "StrongMe.Web",
+        "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web\\StrongMe.Web.csproj",
+        "packagesPath": "C:\\Users\\Pavilion\\.nuget\\packages\\",
+        "outputPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Pavilion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Models\\StrongMe.Data.Models.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data.Models\\StrongMe.Data.Models.csproj"
+              },
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data\\StrongMe.Data.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Data\\StrongMe.Data\\StrongMe.Data.csproj"
+              },
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Data\\StrongMe.Services.Data.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Data\\StrongMe.Services.Data.csproj"
+              },
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Mapping\\StrongMe.Services.Mapping.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Mapping\\StrongMe.Services.Mapping.csproj"
+              },
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Messaging\\StrongMe.Services.Messaging.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Messaging\\StrongMe.Services.Messaging.csproj"
+              },
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services\\StrongMe.Services.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services\\StrongMe.Services.csproj"
+              },
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\StrongMe.Common\\StrongMe.Common.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\StrongMe.Common\\StrongMe.Common.csproj"
+              },
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web.Infrastructure\\StrongMe.Web.Infrastructure.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web.Infrastructure\\StrongMe.Web.Infrastructure.csproj"
+              },
+              "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web.ViewModels\\StrongMe.Web.ViewModels.csproj": {
+                "projectPath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Web\\StrongMe.Web.ViewModels\\StrongMe.Web.ViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "BuildBundlerMinifier": {
+              "target": "Package",
+              "version": "[3.2.449, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Web.LibraryManager.Build": {
+              "target": "Package",
+              "version": "[2.1.113, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

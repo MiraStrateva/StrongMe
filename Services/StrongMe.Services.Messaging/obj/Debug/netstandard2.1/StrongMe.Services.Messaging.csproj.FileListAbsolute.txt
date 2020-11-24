@@ -1,0 +1,9 @@
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Messaging\bin\Debug\netstandard2.1\StrongMe.Services.Messaging.deps.json
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Messaging\bin\Debug\netstandard2.1\StrongMe.Services.Messaging.dll
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Messaging\bin\Debug\netstandard2.1\StrongMe.Services.Messaging.pdb
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Messaging\obj\Debug\netstandard2.1\StrongMe.Services.Messaging.csprojAssemblyReference.cache
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Messaging\obj\Debug\netstandard2.1\StrongMe.Services.Messaging.AssemblyInfoInputs.cache
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Messaging\obj\Debug\netstandard2.1\StrongMe.Services.Messaging.AssemblyInfo.cs
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Messaging\obj\Debug\netstandard2.1\StrongMe.Services.Messaging.csproj.CoreCompileInputs.cache
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Messaging\obj\Debug\netstandard2.1\StrongMe.Services.Messaging.dll
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Messaging\obj\Debug\netstandard2.1\StrongMe.Services.Messaging.pdb

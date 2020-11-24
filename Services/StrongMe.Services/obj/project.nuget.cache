@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "m3rKG2RqqCSawi/PuMKzzKM+41oQiX2BuyrOKntqou7TBExNaUNCT+D+obJlqd84jLBo9jKm5UrmejTsoKKQpQ==",
+  "success": true,
+  "projectFilePath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services\\StrongMe.Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Pavilion\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
+    "C:\\Users\\Pavilion\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512"
+  ],
+  "logs": []
+}

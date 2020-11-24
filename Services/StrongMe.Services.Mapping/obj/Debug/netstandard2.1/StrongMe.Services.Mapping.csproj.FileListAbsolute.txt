@@ -1,0 +1,9 @@
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Mapping\bin\Debug\netstandard2.1\StrongMe.Services.Mapping.deps.json
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Mapping\bin\Debug\netstandard2.1\StrongMe.Services.Mapping.dll
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Mapping\bin\Debug\netstandard2.1\StrongMe.Services.Mapping.pdb
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Mapping\obj\Debug\netstandard2.1\StrongMe.Services.Mapping.AssemblyInfoInputs.cache
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Mapping\obj\Debug\netstandard2.1\StrongMe.Services.Mapping.AssemblyInfo.cs
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Mapping\obj\Debug\netstandard2.1\StrongMe.Services.Mapping.csproj.CoreCompileInputs.cache
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Mapping\obj\Debug\netstandard2.1\StrongMe.Services.Mapping.dll
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Mapping\obj\Debug\netstandard2.1\StrongMe.Services.Mapping.pdb
+D:\Mira\SoftUni\.NetCore\StrongMe\Services\StrongMe.Services.Mapping\obj\Debug\netstandard2.1\StrongMe.Services.Mapping.csprojAssemblyReference.cache

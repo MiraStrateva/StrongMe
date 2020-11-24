@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "XEm678cNUXU9BhL6HgU0lQAMXAsxETC8fmIGafzqFnyOBYfLo1oFb+fbKBp6E7+lGNhhnIRKIEvP/ZeZGo0dpg==",
+  "success": true,
+  "projectFilePath": "D:\\Mira\\SoftUni\\.NetCore\\StrongMe\\Services\\StrongMe.Services.Mapping\\StrongMe.Services.Mapping.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Pavilion\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\Pavilion\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Pavilion\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
+    "C:\\Users\\Pavilion\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512",
+    "C:\\Users\\Pavilion\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
