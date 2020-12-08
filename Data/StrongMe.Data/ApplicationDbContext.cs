@@ -30,7 +30,7 @@
 
         public DbSet<BodyPart> BodyParts { get; set; }
 
-        public DbSet<Excercise> Excercises { get; set; }
+        public DbSet<Exercise> Exercises { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 

@@ -8,11 +8,11 @@
     {
         public BodyPart()
         {
-            this.Excercises = new HashSet<Excercise>();
+            this.Exercises = new HashSet<Exercise>();
         }
 
         public string Name { get; set; }
 
-        public ICollection<Excercise> Excercises { get; set; }
+        public ICollection<Exercise> Exercises { get; set; }
     }
 }

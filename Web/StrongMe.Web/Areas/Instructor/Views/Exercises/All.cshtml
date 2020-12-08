@@ -1,0 +1,61 @@
+﻿@model StrongMe.Web.ViewModels.Instructor.Exercises.ExerciseListViewModel
+@{
+    this.ViewData["Title"] = "All Exercises, page " + Model.PageNumber;
+}
+
+@if (this.TempData.ContainsKey("Message"))
+{
+    <div class="alert alert-success">@this.TempData["Message"]</div>
+}
+
+<h1>@this.ViewData["Title"]</h1>
+<br />
+
+<div class="container">
+    <div class="row">
+        <a class="btn btn-secondary" asp-area="Instructor" asp-controller="Exercises" asp-action="Create">New Exercise</a>
+    </div>
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <a class="btn btn-secondary" asp-area="Instructor" asp-controller="Exercises" asp-action="All">All</a>
+        <a class="btn btn-secondary" asp-area="Instructor" asp-controller="Exercises" asp-action="AllByCategory">By Category</a>
+        <a class="btn btn-secondary" asp-area="Instructor" asp-controller="Exercises" asp-action="AllByBodyPart">By Body Part</a>
+    </div>
+</div>
+<br />
+@foreach (var group in this.Model.ExerciseGroups)
+{
+    <div class="container">
+        <div class="row">
+            <h2 class="col-md-12">@group.Name</h2>
+            <div class="album py-5 bg-light col-md-12">
+                <div class="container">
+                    <div class="row">
+                        @foreach (var exercise in group.Exercises)
+                        {
+                            <div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                    <img class="card-img-top" src="@exercise.ImageUrl" style="height: 225px; width: 100%; display: block;">
+                                    <div class="card-body bg-dark text-white">
+                                        <h3 class="mt-0">@exercise.Name</h3>
+                                        <h5>@exercise.CategoryName / @exercise.BodyPartName</h5>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <a class="btn btn-sm btn-outline-secondary text-white border-light" asp-area="Instructor" asp-action="ById" asp-route-id="@exercise.Id">View</a>
+                                                <a class="btn btn-sm btn-outline-secondary text-white border-light" asp-area="Instructor" asp-action="Edit" asp-route-id="@exercise.Id">Edit</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<hr />
+<partial name="_PagingPartial" model="@Model" />

@@ -11,9 +11,9 @@
             this.Id = Guid.NewGuid().ToString();
         }
 
-        public int ExcerciseId { get; set; }
+        public int ExerciseId { get; set; }
 
-        public virtual Excercise Excercise { get; set; }
+        public virtual Exercise Exercise { get; set; }
 
         public string Extension { get; set; }
 

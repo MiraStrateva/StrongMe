@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\StrongMe.Data.Common\StrongMe.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\StrongMe.Data.Models\StrongMe.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Web\StrongMe.Web.ViewModels\StrongMe.Web.ViewModels.csproj" />
     <ProjectReference Include="..\StrongMe.Services.Mapping\StrongMe.Services.Mapping.csproj" />
   </ItemGroup>
 

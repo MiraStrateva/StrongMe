@@ -9,5 +9,7 @@
         public const string InstructurRoleName = "Instructor";
 
         public const string TraineeRoleName = "Trainee";
+
+        public const int ItemsPerPage = 12;
     }
 }

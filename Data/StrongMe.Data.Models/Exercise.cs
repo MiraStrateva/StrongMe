@@ -5,9 +5,9 @@
 
     using StrongMe.Data.Common.Models;
 
-    public class Excercise : BaseDeletableModel<int>
+    public class Exercise : BaseDeletableModel<int>
     {
-        public Excercise()
+        public Exercise()
         {
             this.Images = new HashSet<Image>();
         }
@@ -16,7 +16,7 @@
 
         public string Description { get; set; }
 
-        public Guid TrainerId { get; set; }
+        public string TrainerId { get; set; }
 
         public virtual ApplicationUser Trainer { get; set; }
 

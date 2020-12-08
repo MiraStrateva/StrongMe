@@ -1,0 +1,46 @@
+﻿@using StrongMe.Common
+@model StrongMe.Web.ViewModels.Instructor.Exercises.SingleExerciseViewModel
+@{
+    this.ViewData["Title"] = Model.Name;
+}
+
+<div>
+    <h2>@this.ViewData["Title"]</h2>
+    <h4>@Model.CategoryName / @Model.BodyPartName</h4>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="box-shadow">
+                <img class="img-fluid" src="@Model.ImageUrl" alt="@Model.Name" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <p>@Model.Description</p>
+            @if (this.User.IsInRole(GlobalConstants.InstructurRoleName))
+            {
+                <br />
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <a class="btn btn-sm btn-outline-secondary" asp-controller="Exercises" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                        <form method="post" asp-controller="Exercises" asp-action="Delete" id="deleteForm" asp-route-id="@Model.Id">
+                        </form>
+                        <button class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>Do you want to delete "@Model.Name"?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="deleteForm.submit()">Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>

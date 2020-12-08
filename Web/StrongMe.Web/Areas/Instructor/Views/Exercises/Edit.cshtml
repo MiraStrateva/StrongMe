@@ -1,14 +1,13 @@
-﻿@model StrongMe.Web.ViewModels.Instructor.Exercises.CreateExerciseInputModel
+﻿@model StrongMe.Web.ViewModels.Instructor.Exercises.EditExerciseInputModel
 @{
-    this.ViewData["Title"] = "Add new exercise";
+    ViewData["Title"] = "Edit exercise";
     var categoryItems = this.Model.CategoriesItems.Select(x => new SelectListItem(x.Value, x.Key));
     var bodyPartsItems = this.Model.BodyPartsItems.Select(x => new SelectListItem(x.Value, x.Key));
 }
 
-<form method="post" class="col-md-6 offset-md-3"
-      enctype="multipart/form-data">
-    <h1>@this.ViewData["Title"]</h1>
-    <div asp-validation-summary="All" class="text-danger"></div>
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" id="editForm" enctype="multipart/form-data">
     <div class="form-group">
         <label asp-for="Name"></label>
         <input asp-for="Name" class="form-control" />
@@ -16,17 +15,17 @@
     </div>
     <div class="form-group">
         <label asp-for="Description"></label>
-        <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+        <textarea asp-for="Description" class="form-control"></textarea>
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="CategoryId"></label>
-        <select asp-for="CategoryId" class="form-control" asp-items="categoryItems"></select>
+        <select asp-for="CategoryId" asp-items="categoryItems" class="form-control"></select>
         <span asp-validation-for="CategoryId" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="BodyPartId"></label>
-        <select asp-for="BodyPartId" class="form-control" asp-items="bodyPartsItems"></select>
+        <select asp-for="BodyPartId" asp-items="bodyPartsItems" class="form-control"></select>
         <span asp-validation-for="BodyPartId" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -34,5 +33,17 @@
         <input asp-for="ImageFiles" class="form-control" />
         <span asp-validation-for="ImageFiles" class="text-danger"></span>
     </div>
-    <input type="submit" class="btn btn-primary" />
+    <hr />
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" class="btn btn-success" value="Save changes"/>
 </form>
+<hr />
+<div class="row">
+    @foreach (var image in this.Model.Images)
+    {
+        <form method="post" asp-controller="Exercises" asp-action="DeleteImage" id="deleteForm" asp-route-id="@image.Id">
+            <img class="card-img-top img-fluid" src="@image.ImageUrl" style="height: 150px; width: 30%; display: block;">
+            <input type="submit" class="btn btn-sm btn-outline-secondary" value="Delete" />
+        </form>
+    }
+</div>
