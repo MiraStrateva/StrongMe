@@ -17,6 +17,8 @@ namespace StrongMe.Data.Models
             this.Logins = new HashSet<IdentityUserLogin<string>>();
         }
 
+        public string Code { get; set; }
+
         // Audit info
         public DateTime CreatedOn { get; set; }
 

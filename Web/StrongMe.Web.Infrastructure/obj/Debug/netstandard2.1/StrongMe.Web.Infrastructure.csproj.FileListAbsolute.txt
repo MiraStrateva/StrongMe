@@ -1,8 +1,0 @@
-D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.Infrastructure\bin\Debug\netstandard2.1\StrongMe.Web.Infrastructure.deps.json
-D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.Infrastructure\bin\Debug\netstandard2.1\StrongMe.Web.Infrastructure.dll
-D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.Infrastructure\bin\Debug\netstandard2.1\StrongMe.Web.Infrastructure.pdb
-D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.Infrastructure\obj\Debug\netstandard2.1\StrongMe.Web.Infrastructure.AssemblyInfoInputs.cache
-D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.Infrastructure\obj\Debug\netstandard2.1\StrongMe.Web.Infrastructure.AssemblyInfo.cs
-D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.Infrastructure\obj\Debug\netstandard2.1\StrongMe.Web.Infrastructure.csproj.CoreCompileInputs.cache
-D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.Infrastructure\obj\Debug\netstandard2.1\StrongMe.Web.Infrastructure.dll
-D:\Mira\SoftUni\.NetCore\StrongMe\Web\StrongMe.Web.Infrastructure\obj\Debug\netstandard2.1\StrongMe.Web.Infrastructure.pdb
