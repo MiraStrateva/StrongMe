@@ -3,27 +3,31 @@
     using System.ComponentModel.DataAnnotations;
     using System.Text;
     using System.Threading.Tasks;
-    using Microsoft.AspNetCore.Hosting;
+
     using Microsoft.AspNetCore.Identity;
-    using Microsoft.AspNetCore.Identity.UI.Services;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
+    using Microsoft.Extensions.Configuration;
     using StrongMe.Data.Models;
+    using StrongMe.Services.Messaging;
 
     public partial class InviteTraineeModel : PageModel
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly IEmailSender _emailSender;
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly SignInManager<ApplicationUser> signInManager;
+        private readonly IEmailSender emailSender;
+        private readonly IConfiguration configuration;
 
         public InviteTraineeModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            IConfiguration configuration)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
-            _emailSender = emailSender;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
+            this.emailSender = emailSender;
+            this.configuration = configuration;
         }
 
         [TempData]
@@ -39,51 +43,59 @@
             public string TraineeEmail { get; set; }
         }
 
-        private async Task LoadAsync(ApplicationUser user)
-        {
-            Input = new InputModel
-            {
-                TraineeEmail = string.Empty
-            };
-        }
-
         public async Task<IActionResult> OnGetAsync()
         {
-            var user = await _userManager.GetUserAsync(User);
+            var user = await this.userManager.GetUserAsync(this.User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+                return this.NotFound($"Unable to load user with ID '{this.userManager.GetUserId(this.User)}'.");
             }
 
-            await LoadAsync(user);
-            return Page();
+            this.Load(user);
+            return this.Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            var user = await _userManager.GetUserAsync(User);
+            var user = await this.userManager.GetUserAsync(this.User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+                return this.NotFound($"Unable to load user with ID '{this.userManager.GetUserId(this.User)}'.");
             }
 
-            if (!ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
-                await LoadAsync(user);
-                return Page();
+                this.Load(user);
+                return this.Page();
             }
 
-            if (!string.IsNullOrEmpty(Input.TraineeEmail))
+            if (!string.IsNullOrEmpty(this.Input.TraineeEmail))
             {
                 var html = new StringBuilder();
-                html.AppendLine($"<h1>Follow the link to register in StrongMe!</h1>");
-                html.AppendLine($"<a href=\"{this.HttpContext.Request.Host}/Identity/Account/Register?code={user.Code}\" />");
-                await this._emailSender.SendEmailAsync(Input.TraineeEmail, "StrongMe Invitation", html.ToString());
-            } 
+                html.AppendLine($"<h3>Follow the link to register in StrongMe!</h3>");
+                html.AppendLine($"<a href=\"https://{this.HttpContext.Request.Host}/Identity/Account/Register?code={user.Code}\" target=\"_blank\">Click To Register</a>");
+                html.AppendLine("<br/>");
+                html.AppendLine("<h5>Regards, <br/> StrongMe Team!</h5>");
 
-            await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = $"Trainee {Input.TraineeEmail} has been invited";
-            return RedirectToPage();
+                await this.emailSender.SendEmailAsync(
+                    this.configuration["SendGrid:SenderEmail"],
+                    this.configuration["SendGrid:SenderName"],
+                    this.Input.TraineeEmail,
+                    "StrongMe Invitation",
+                    html.ToString());
+            }
+
+            await this.signInManager.RefreshSignInAsync(user);
+            this.StatusMessage = $"Trainee {this.Input.TraineeEmail} has been invited";
+            return this.RedirectToPage();
+        }
+
+        private void Load(ApplicationUser user)
+        {
+            this.Input = new InputModel
+            {
+                TraineeEmail = string.Empty,
+            };
         }
     }
 }

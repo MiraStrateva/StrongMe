@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace StrongMe.Data.Migrations
+﻿namespace StrongMe.Data.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class AddUsersCode : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
