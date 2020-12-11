@@ -1,0 +1,31 @@
+﻿@model StrongMe.Web.ViewModels.Instructor.Common.SelectExerciseViewModel
+@{
+//var categoryItems = this.Model.CategoriesItems.Select(x => new SelectListItem(x.Value, x.Key));
+//var bodyPartsItems = this.Model.BodyPartsItems.Select(x => new SelectListItem(x.Value, x.Key));
+}
+
+<div>
+    @*<div class="form-group">
+        <label asp-for="CategoryId"></label>
+        <select asp-for="CategoryId" class="form-control" asp-items="categoryItems"></select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BodyPartId"></label>
+        <select asp-for="BodyPartId" class="form-control" asp-items="bodyPartsItems"></select>
+        <span asp-validation-for="BodyPartId" class="text-danger"></span>
+    </div>*@
+    <div class="container">
+        @foreach (var exercise in Model.ExercisesItems)
+        {
+        <div class="exercise-item" id="exercise@(exercise.Id)" data-exerciseid="@exercise.Id">
+            <h4>@exercise.Name</h4>
+            <h5>@exercise.CategoryName / @exercise.BodyPartName</h5>
+            <div class="box-shadow">
+                <img class="img-fluid" src="@exercise.ImageUrl" alt="@exercise.Name" />
+            </div>
+            <input type="button" class="btn btn-primary exercise-item-add" data-exerciseid="@exercise.Id" Value="Add to template" />
+        </div>
+        }
+    </div>
+</div>

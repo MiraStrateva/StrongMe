@@ -1,0 +1,35 @@
+﻿@model StrongMe.Web.ViewModels.Instructor.TemplatePrograms.TemplateProgramListViewModel
+@{
+    this.ViewData["Title"] = "Program Templates, page " + Model.PageNumber;
+}
+
+<h1>@this.ViewData["Title"]</h1>
+<br />
+
+<div class="container">
+    <div class="row">
+        <a class="btn btn-secondary" asp-area="Instructor" asp-controller="TemplatePrograms" asp-action="Create">New Template Program</a>
+    </div>
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var templateProgram in Model.TemplatePrograms)
+                {
+                    <tr>
+                        <td>
+                            <a asp-area="Instructor" asp-controller="TemplatePrograms" asp-action="ById" asp-route-id="@templateProgram.Id"> @templateProgram.Name</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

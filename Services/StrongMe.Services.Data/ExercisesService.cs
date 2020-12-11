@@ -69,13 +69,25 @@
             return this.exercisesRepository.All().Count();
         }
 
-        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage)
+        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage, string userId)
         {
             var exercises = this.exercisesRepository.AllAsNoTracking()
+                .Where(x => x.TrainerId == userId)
                 .OrderBy(x => x.CategoryId)
                 .ThenBy(x => x.BodyPartId)
                 .ThenBy(x => x.Name)
                 .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
+                .To<T>().ToList();
+            return exercises;
+        }
+
+        public IEnumerable<T> GetAll<T>(string userId)
+        {
+            var exercises = this.exercisesRepository.AllAsNoTracking()
+                .Where(x => x.TrainerId == userId)
+                .OrderBy(x => x.CategoryId)
+                .ThenBy(x => x.BodyPartId)
+                .ThenBy(x => x.Name)
                 .To<T>().ToList();
             return exercises;
         }

@@ -1,0 +1,43 @@
+﻿@model StrongMe.Web.ViewModels.Instructor.TemplatePrograms.CreateTemplateProgramInputModel
+@{
+    this.ViewData["Title"] = "Add new program template";
+}
+<form method="post"
+      enctype="multipart/form-data">
+    <h1>@this.ViewData["Title"]</h1>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <div class="container col-md-9">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="container">
+                <label asp-for="Details"></label>
+                <div class="row">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                @*<th scope="col">Id</th>*@
+                                <th scope="col">Name</th>
+                                <th scope="col">Series Count</th>
+                                <th scope="col">Repetitions</th>
+                                <th scope="col">Break</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ExercisesContainer">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br />
+            <input type="submit" class="btn btn-primary" />
+        </div>
+        <div class="container col-md-3">
+            <partial name="_SelectExercisePartial" model="@Model.ExerciseList" />
+        </div>
+    </div>
+</form>
+
+<script src="~/js/program.js"></script>

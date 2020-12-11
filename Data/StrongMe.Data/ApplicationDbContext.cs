@@ -32,6 +32,10 @@
 
         public DbSet<Exercise> Exercises { get; set; }
 
+        public DbSet<TemplateProgram> TemplatePrograms { get; set; }
+
+        public DbSet<TemplateProgramDetail> TemplateProgramDetails { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)

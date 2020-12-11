@@ -40,7 +40,7 @@
             this.environment = environment;
         }
 
-        public IActionResult All(int id = 1)
+        public async Task<IActionResult> All(int id = 1)
         {
             if (id <= 0)
             {
@@ -48,6 +48,7 @@
             }
 
             this.ViewBag.All = true;
+            var user = await this.userManager.GetUserAsync(this.User);
             var viewModel = new ExerciseListViewModel
             {
                 ItemsPerPage = GlobalConstants.ItemsPerPage,
@@ -58,7 +59,7 @@
                     new ExerciseByGroupListViewModel
                     {
                         Name = string.Empty,
-                        Exercises = this.exercisesService.GetAll<ExerciseInListViewModel>(id, GlobalConstants.ItemsPerPage),
+                        Exercises = this.exercisesService.GetAll<ExerciseInListViewModel>(id, GlobalConstants.ItemsPerPage, user.Id),
                     },
                 },
             };
@@ -66,7 +67,7 @@
             return this.View(viewModel);
         }
 
-        public IActionResult AllByCategory(int id = 1)
+        public async Task<IActionResult> AllByCategory(int id = 1)
         {
             if (id <= 0)
             {
@@ -74,14 +75,14 @@
             }
 
             this.ViewBag.ByCategory = true;
-
+            var user = await this.userManager.GetUserAsync(this.User);
             var viewModel = new ExerciseListViewModel
             {
                 ItemsPerPage = GlobalConstants.ItemsPerPage,
                 PageNumber = id,
                 ItemsCount = this.exercisesService.GetCount(),
                 ExerciseGroups = this.exercisesService
-                .GetAll<ExerciseInListViewModel>(id, GlobalConstants.ItemsPerPage)
+                .GetAll<ExerciseInListViewModel>(id, GlobalConstants.ItemsPerPage, user.Id)
                 .GroupBy(e => e.CategoryName)
                 .Select(g => new ExerciseByGroupListViewModel
                 {
@@ -93,7 +94,7 @@
             return this.View(nameof(this.All), viewModel);
         }
 
-        public IActionResult AllByBodyPart(int id = 1)
+        public async Task<IActionResult> AllByBodyPart(int id = 1)
         {
             if (id <= 0)
             {
@@ -101,13 +102,14 @@
             }
 
             this.ViewBag.ByBodyPart = true;
+            var user = await this.userManager.GetUserAsync(this.User);
             var viewModel = new ExerciseListViewModel
             {
                 ItemsPerPage = GlobalConstants.ItemsPerPage,
                 PageNumber = id,
                 ItemsCount = this.exercisesService.GetCount(),
                 ExerciseGroups = this.exercisesService
-                .GetAll<ExerciseInListViewModel>(id, GlobalConstants.ItemsPerPage)
+                .GetAll<ExerciseInListViewModel>(id, GlobalConstants.ItemsPerPage, user.Id)
                 .GroupBy(e => e.BodyPartName)
                 .Select(g => new ExerciseByGroupListViewModel
                 {
@@ -160,8 +162,8 @@
         [Authorize]
         public IActionResult ById(int id)
         {
-            var recipe = this.exercisesService.GetById<SingleExerciseViewModel>(id);
-            return this.View(recipe);
+            var exercise = this.exercisesService.GetById<SingleExerciseViewModel>(id);
+            return this.View(exercise);
         }
 
         public IActionResult Edit(int id)
