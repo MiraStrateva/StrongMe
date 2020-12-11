@@ -60,6 +60,12 @@
             return this.View(viewModel);
         }
 
+        public IActionResult ById(int id)
+        {
+            var templateProgram = this.templateProgramsService.GetById<SingleTemplateProgramViewModel>(id);
+            return this.View(templateProgram);
+        }
+
         public async Task<IActionResult> Create()
         {
             var user = await this.userManager.GetUserAsync(this.User);
@@ -110,6 +116,13 @@
             this.TempData["Message"] = "Program template added successfully.";
 
             return this.RedirectToAction("All");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await this.templateProgramsService.DeleteAsync(id);
+            return this.RedirectToAction(nameof(this.All));
         }
     }
 }

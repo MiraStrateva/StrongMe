@@ -1,6 +1,7 @@
 ﻿@model StrongMe.Web.ViewModels.Instructor.TemplatePrograms.TemplateProgramListViewModel
 @{
     this.ViewData["Title"] = "Program Templates, page " + Model.PageNumber;
+    string detail = "Selected program template";
 }
 
 <h1>@this.ViewData["Title"]</h1>
@@ -17,7 +18,9 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">Name</th>
+                    <th scope="col" style="width:90%">Name</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -27,9 +30,18 @@
                         <td>
                             <a asp-area="Instructor" asp-controller="TemplatePrograms" asp-action="ById" asp-route-id="@templateProgram.Id"> @templateProgram.Name</a>
                         </td>
+                        <td>
+                            <a class="btn btn-secondary" asp-area="Instructor" asp-controller="TemplatePrograms" asp-action="Edit" asp-route-id="@templateProgram.Id">Edit</a>
+                        </td>
+                        <td>
+                            <form method="post" asp-area="Instructor" asp-controller="TemplatePrograms" asp-action="Delete" id="deleteForm" asp-route-id="@templateProgram.Id">
+                            </form>
+                            <button class="btn btn-secondary" data-toggle="modal" data-target="#deleteModal" data->Delete</button>
+                        </td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
 </div>
+<partial name="_DeleteModalPartial" model=@detail />

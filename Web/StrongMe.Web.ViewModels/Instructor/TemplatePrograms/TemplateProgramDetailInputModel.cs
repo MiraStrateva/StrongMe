@@ -1,26 +1,35 @@
 ﻿namespace StrongMe.Web.ViewModels.Instructor.TemplatePrograms
 {
-    using System;
-    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
 
-    public class TemplateProgramDetailInputModel
+    using AutoMapper;
+    using StrongMe.Data.Models;
+    using StrongMe.Services.Mapping;
+
+    public class TemplateProgramDetailInputModel : IMapFrom<TemplateProgramDetail>, IHaveCustomMappings
     {
-        [Required]
         public int ExerciseId { get; set; }
 
-        public string Name { get; set; }
+        public string ExerciseName { get; set; }
 
-        [Required]
-        [Range(1, 10, ErrorMessage = "Value for {0} must be between {1} and {2}.")]
+        public string ImageUrl { get; set; }
+
         public int SeriesCount { get; set; }
 
-        [Range(0, 30, ErrorMessage = "Value for {0} must be between {1} and {2}.")]
         public int Repetitions { get; set; }
 
-        [Range(0, 120, ErrorMessage = "Value for {0} must be between {1} and {2} seconds.")]
         public int Break { get; set; }
 
-        [Required]
         public int SortOrder { get; set; }
+
+        public void CreateMappings(IProfileExpression configuration)
+        {
+            configuration.CreateMap<TemplateProgramDetail, TemplateProgramDetailInputModel>()
+                .ForMember(x => x.ImageUrl, opt =>
+                    opt.MapFrom(x =>
+                        x.Exercise.Images.OrderByDescending(i => i.CreatedOn).FirstOrDefault().RemoteImageUrl != null ?
+                        x.Exercise.Images.OrderByDescending(i => i.CreatedOn).FirstOrDefault().RemoteImageUrl :
+                        "/images/exercises/" + x.Exercise.Images.OrderByDescending(i => i.CreatedOn).FirstOrDefault().Id + "." + x.Exercise.Images.OrderByDescending(i => i.CreatedOn).FirstOrDefault().Extension));
+        }
     }
 }

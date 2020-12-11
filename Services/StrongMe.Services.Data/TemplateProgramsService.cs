@@ -44,6 +44,13 @@
             await this.templateProgramsRepository.SaveChangesAsync();
         }
 
+        public async Task DeleteAsync(int id)
+        {
+            var templateProgram = this.templateProgramsRepository.All().FirstOrDefault(x => x.Id == id);
+            this.templateProgramsRepository.Delete(templateProgram);
+            await this.templateProgramsRepository.SaveChangesAsync();
+        }
+
         public IEnumerable<T> GetAll<T>(int page, int itemsPerPage, string userId)
         {
             var templatePrograms = this.templateProgramsRepository.AllAsNoTracking()

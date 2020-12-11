@@ -11,7 +11,7 @@
         [MinLength(2)]
         public string Name { get; set; }
 
-        public IEnumerable<TemplateProgramDetailInputModel> Details { get; set; }
+        public IEnumerable<CreateTemplateProgramDetailInputModel> Details { get; set; }
 
         public SelectExerciseViewModel ExerciseList { get; set; }
     }

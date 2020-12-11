@@ -14,5 +14,7 @@
         T GetById<T>(int id);
 
         Task CreateAsync(CreateTemplateProgramInputModel input, string userId);
+
+        Task DeleteAsync(int id);
     }
 }
