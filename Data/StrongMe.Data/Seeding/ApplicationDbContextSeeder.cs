@@ -26,6 +26,7 @@
             var seeders = new List<ISeeder>
                           {
                               new RolesSeeder(),
+                              new IdentitySeeder(),
                               new SettingsSeeder(),
                               new CategoriesSeeder(),
                               new BodyPartsSeeder(),

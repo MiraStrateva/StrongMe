@@ -43,6 +43,12 @@
                                 <a class="nav-link text-dark" asp-area="Instructor" asp-controller="TemplatePrograms" asp-action="All">Program Templates</a>
                             </li>
                         }
+                        @if (this.SignInManager.IsSignedIn(this.User) && this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Administration" asp-controller="Categories" asp-action="Index">Categories Admin</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
