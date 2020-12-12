@@ -13,6 +13,8 @@
 
         T GetById<T>(int id);
 
+        Task UpdateAsync(int id, EditTemplateProgramInputModel input);
+
         Task CreateAsync(CreateTemplateProgramInputModel input, string userId);
 
         Task DeleteAsync(int id);

@@ -1,0 +1,60 @@
+﻿@model StrongMe.Web.ViewModels.Instructor.TemplatePrograms.EditTemplateProgramInputModel
+@{
+    this.ViewData["Title"] = "Edit " + @Model.Name;
+}
+<form method="post"
+      enctype="multipart/form-data">
+    <h1>@this.ViewData["Title"]</h1>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <div class="container col-md-9">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="container">
+                <label asp-for="Details"></label>
+                <div class="row">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Series Count</th>
+                                <th scope="col">Repetitions</th>
+                                <th scope="col">Break</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="ExercisesContainer">
+                            @{
+                                foreach (var detail in Model.Details)
+                                {
+                                    <tr>
+                                        <td>@detail.ExerciseName</td>
+                                        <td>@detail.SeriesCount</td>
+                                        <td>@detail.Repetitions</td>
+                                        <td>@detail.Break</td>
+                                        <td>
+                                            @*<button class="btn btn-secondary" asp-route="EditDetail" asp-area="Instructor" asp-controller="TemplatePrograms" asp-action="EditDetail" asp-route-id="@detail.Id">Edit</button>*@
+                                            <a class="btn btn-secondary" asp-area="Instructor" asp-controller="TemplatePrograms" asp-action="EditDetail" asp-route-id="@detail.Id">Edit</a>
+                                            <a class="btn btn-secondary" asp-area="Instructor" asp-controller="TemplatePrograms" asp-action="DeleteDetail" asp-route-id="@detail.Id">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br />
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" class="btn btn-primary" />
+        </div>
+        <div class="container col-md-3">
+            <partial name="_SelectExercisePartial" model="@Model.ExerciseList" />
+        </div>
+    </div>
+</form>
+
+<script src="~/js/program.js"></script>

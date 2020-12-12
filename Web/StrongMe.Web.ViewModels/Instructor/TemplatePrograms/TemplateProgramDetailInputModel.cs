@@ -20,8 +20,6 @@
 
         public int Break { get; set; }
 
-        public int SortOrder { get; set; }
-
         public void CreateMappings(IProfileExpression configuration)
         {
             configuration.CreateMap<TemplateProgramDetail, TemplateProgramDetailInputModel>()

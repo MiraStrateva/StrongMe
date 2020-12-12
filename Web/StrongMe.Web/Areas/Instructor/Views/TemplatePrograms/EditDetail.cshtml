@@ -1,0 +1,31 @@
+﻿@model StrongMe.Web.ViewModels.Instructor.TemplatePrograms.EditTemplateProgramDetailInputModel
+@{
+    this.ViewData["Title"] = "Edit " + @Model.ExerciseName;
+}
+<form method="post"
+      enctype="multipart/form-data">
+    <h1>@this.ViewData["Title"]</h1>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <div class="container col-md-9">
+            <div class="form-group">
+                <label asp-for="SeriesCount"></label>
+                <input asp-for="SeriesCount" class="form-control" />
+                <span asp-validation-for="SeriesCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Repetitions"></label>
+                <input asp-for="Repetitions" class="form-control" />
+                <span asp-validation-for="Repetitions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Break"></label>
+                <input asp-for="Break" class="form-control" />
+                <span asp-validation-for="Break" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="TemplateProgramId" />
+            <input type="submit" value ="Save" class="btn btn-primary" asp-action="EditDetail" asp-controller="TemplatePrograms" asp-route-id="@Model.Id"/>
+        </div>
+    </div>
+</form>

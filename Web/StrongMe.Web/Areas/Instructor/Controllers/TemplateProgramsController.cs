@@ -21,6 +21,7 @@
     public class TemplateProgramsController : BaseController
     {
         private readonly ITemplateProgramsService templateProgramsService;
+        private readonly ITemplateProgramDetailsService templateProgramDetailsService;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly ICategoriesService categoriesService;
         private readonly IBodyPartsService bodyPartsService;
@@ -28,12 +29,14 @@
 
         public TemplateProgramsController(
             ITemplateProgramsService templateProgramsService,
+            ITemplateProgramDetailsService templateProgramDetailsService,
             UserManager<ApplicationUser> userManager,
             ICategoriesService categoriesService,
             IBodyPartsService bodyPartsService,
             IExercisesService exercisesService)
         {
             this.templateProgramsService = templateProgramsService;
+            this.templateProgramDetailsService = templateProgramDetailsService;
             this.userManager = userManager;
             this.categoriesService = categoriesService;
             this.bodyPartsService = bodyPartsService;
@@ -123,6 +126,65 @@
         {
             await this.templateProgramsService.DeleteAsync(id);
             return this.RedirectToAction(nameof(this.All));
+        }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            var inputModel = this.templateProgramsService.GetById<EditTemplateProgramInputModel>(id);
+
+            var user = await this.userManager.GetUserAsync(this.User);
+            inputModel.ExerciseList = new SelectExerciseViewModel()
+            {
+                // CategoriesItems = categoriesItems,
+                // BodyPartsItems = bodyPartsItems,
+                ExercisesItems = this.exercisesService.GetAll<SingleExerciseViewModel>(user.Id),
+            };
+
+            return this.View(inputModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditTemplateProgramInputModel input)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(input);
+            }
+
+            await this.templateProgramsService.UpdateAsync(id, input);
+            return this.RedirectToAction(nameof(this.All));
+        }
+
+        public IActionResult EditDetail(int id)
+        {
+            var inputModel = this.templateProgramDetailsService.GetById<EditTemplateProgramDetailInputModel>(id);
+            return this.View(inputModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditDetail(int id, EditTemplateProgramDetailInputModel input)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(input);
+            }
+
+            await this.templateProgramDetailsService.UpdateAsync(id, input);
+
+            return this.RedirectToAction(nameof(this.ById), new { id = input.TemplateProgramId });
+        }
+
+        public IActionResult DeleteDetail(int id)
+        {
+            var inputModel = this.templateProgramDetailsService.GetById<EditTemplateProgramDetailInputModel>(id);
+            return this.View(inputModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteDetail(int id, EditTemplateProgramDetailInputModel input)
+        {
+            await this.templateProgramDetailsService.DeleteAsync(id);
+            return this.RedirectToAction(nameof(this.ById), new { id = input.TemplateProgramId });
         }
     }
 }

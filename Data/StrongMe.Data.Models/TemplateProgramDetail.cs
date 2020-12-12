@@ -14,8 +14,6 @@
 
         public int Break { get; set; }
 
-        public int SortOrder { get; set; }
-
         public virtual Exercise Exercise { get; set; }
 
         public virtual TemplateProgram TemplateProgram { get; set; }

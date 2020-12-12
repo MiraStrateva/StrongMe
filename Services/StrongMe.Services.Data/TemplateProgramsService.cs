@@ -26,18 +26,15 @@
                 TrainerId = userId,
             };
 
-            var detailSortOrder = 1;
             foreach (var detail in input.Details)
             {
                 templateProgram.Details.Add(new TemplateProgramDetail
                 {
-                    SortOrder = detailSortOrder,
                     ExerciseId = detail.ExerciseId,
                     SeriesCount = detail.SeriesCount,
                     Repetitions = detail.Repetitions,
                     Break = detail.Break,
                 });
-                detailSortOrder++;
             }
 
             await this.templateProgramsRepository.AddAsync(templateProgram);
@@ -74,6 +71,31 @@
         public int GetCount()
         {
             return this.templateProgramsRepository.All().Count();
+        }
+
+        public async Task UpdateAsync(int id, EditTemplateProgramInputModel input)
+        {
+            var templateProgram = this.templateProgramsRepository.All().FirstOrDefault(x => x.Id == id);
+            templateProgram.Name = input.Name;
+
+            if (input.Details != null)
+            {
+                foreach (var detail in input.Details)
+                {
+                    if (detail.Id == 0)
+                    {
+                        templateProgram.Details.Add(new TemplateProgramDetail
+                        {
+                            ExerciseId = detail.ExerciseId,
+                            SeriesCount = detail.SeriesCount,
+                            Repetitions = detail.Repetitions,
+                            Break = detail.Break,
+                        });
+                    }
+                }
+            }
+
+            await this.templateProgramsRepository.SaveChangesAsync();
         }
     }
 }
