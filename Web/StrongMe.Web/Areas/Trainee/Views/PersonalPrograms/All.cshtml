@@ -1,0 +1,29 @@
+﻿@model StrongMe.Web.ViewModels.Trainee.PersonalPrograms.PersonalProgramListViewModel
+@{
+    this.ViewData["Title"] = "Personal programs";
+}
+
+<h1>@this.ViewData["Title"]</h1>
+<br />
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Exercise Count</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var personalProgram in Model.PersonalPrograms)
+        {
+            <tr>
+                <td>@personalProgram.TemplateProgramName</td>
+                <td>@personalProgram.ExerciseCount</td>
+                <td>
+                    <a class="btn btn-secondary" asp-area="Trainee" asp-controller="PersonalPrograms" asp-action="ById" asp-route-id="@personalProgram.Id">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

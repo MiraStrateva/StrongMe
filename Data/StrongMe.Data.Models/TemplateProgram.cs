@@ -13,8 +13,6 @@
 
         public string Name { get; set; }
 
-        public string Notes { get; set; }
-
         public string TrainerId { get; set; }
 
         public virtual ICollection<TemplateProgramDetail> Details { get; set; }
