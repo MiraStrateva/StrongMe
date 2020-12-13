@@ -46,8 +46,4 @@
     <ProjectReference Include="..\StrongMe.Web.Infrastructure\StrongMe.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\StrongMe.Web.ViewModels\StrongMe.Web.ViewModels.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Trainee\" />
-  </ItemGroup>
 </Project>

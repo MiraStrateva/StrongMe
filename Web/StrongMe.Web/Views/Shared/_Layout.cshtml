@@ -28,29 +28,40 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        @if (this.SignInManager.IsSignedIn(this.User) && this.User.IsInRole(GlobalConstants.InstructurRoleName))
+                        @*<li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </li>*@
+                        @if (this.SignInManager.IsSignedIn(this.User))
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Instructor" asp-controller="Exercises" asp-action="All">Exercises</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Instructor" asp-controller="TemplatePrograms" asp-action="All">Program Templates</a>
-                            </li>
-                        }
-                        @if (this.SignInManager.IsSignedIn(this.User) && this.User.IsInRole(GlobalConstants.AdministratorRoleName))
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Administration" asp-controller="Categories" asp-action="Index">Categories Admin</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Administration" asp-controller="BodyParts" asp-action="Index">Body parts Admin</a>
-                            </li>
+                            if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Administration" asp-controller="Categories" asp-action="Index">Categories Admin</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Administration" asp-controller="BodyParts" asp-action="Index">Body parts Admin</a>
+                                </li>
+                            }
+
+                            if (this.User.IsInRole(GlobalConstants.InstructurRoleName))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Instructor" asp-controller="Exercises" asp-action="All">Exercises</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Instructor" asp-controller="TemplatePrograms" asp-action="All">Program Templates</a>
+                                </li>
+                            }
+
+                            if (this.User.IsInRole(GlobalConstants.TraineeRoleName))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="Trainee" asp-controller="Measurements" asp-action="All">Measurements</a>
+                                </li>
+                            }
                         }
                     </ul>
                 </div>
@@ -58,7 +69,7 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container main-container">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @this.RenderBody()

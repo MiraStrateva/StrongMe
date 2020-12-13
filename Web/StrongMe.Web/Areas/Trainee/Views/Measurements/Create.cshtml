@@ -1,0 +1,83 @@
+﻿@model StrongMe.Web.ViewModels.Trainee.Measurements.CreateMeasurmentInputModel
+@{
+    this.ViewData["Title"] = "Add new measurement";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" class="col-md-6 offset-md-3"
+      enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Date"></label>
+        <input asp-for="Date" class="form-control" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Weight"></label>
+        <input asp-for="Weight" class="form-control" />
+        <span asp-validation-for="Weight" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Chest"></label>
+        <input asp-for="Chest" class="form-control" />
+        <span asp-validation-for="Chest" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RightArmBiceps"></label>
+        <input asp-for="RightArmBiceps" class="form-control" />
+        <span asp-validation-for="RightArmBiceps" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LeftArmBiceps"></label>
+        <input asp-for="LeftArmBiceps" class="form-control" />
+        <span asp-validation-for="LeftArmBiceps" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="UpWaist"></label>
+        <input asp-for="UpWaist" class="form-control" />
+        <span asp-validation-for="UpWaist" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Waist"></label>
+        <input asp-for="Waist" class="form-control" />
+        <span asp-validation-for="Waist" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DownWaist"></label>
+        <input asp-for="DownWaist" class="form-control" />
+        <span asp-validation-for="DownWaist" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Hips"></label>
+        <input asp-for="Hips" class="form-control" />
+        <span asp-validation-for="Hips" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RightThigh"></label>
+        <input asp-for="RightThigh" class="form-control" />
+        <span asp-validation-for="RightThigh" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LeftThigh"></label>
+        <input asp-for="LeftThigh" class="form-control" />
+        <span asp-validation-for="LeftThigh" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RightCalf"></label>
+        <input asp-for="RightCalf" class="form-control" />
+        <span asp-validation-for="RightCalf" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LeftCalf"></label>
+        <input asp-for="LeftCalf" class="form-control" />
+        <span asp-validation-for="LeftCalf" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Neck"></label>
+        <input asp-for="Neck" class="form-control" />
+        <span asp-validation-for="Neck" class="text-danger"></span>
+    </div>
+
+    <input type="submit" class="btn btn-primary" />
+</form>

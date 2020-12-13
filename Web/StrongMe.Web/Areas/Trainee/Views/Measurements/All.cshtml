@@ -1,0 +1,82 @@
+﻿@model StrongMe.Web.ViewModels.Trainee.Measurements.MeasurementListViewModel
+@{
+    this.ViewData["Title"] = "All Measurements, page " + Model.PageNumber;
+}
+
+@if (this.TempData.ContainsKey("Message"))
+{
+    <div class="alert alert-success">@this.TempData["Message"]</div>
+}
+
+<h1>@this.ViewData["Title"]</h1>
+<br />
+
+<div class="container">
+    <div class="row">
+        <a class="btn btn-secondary" asp-area="Trainee" asp-controller="Measurements" asp-action="Create">New Measurement</a>
+    </div>
+</div>
+<br />
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Date</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Chest</th>
+            <th scope="col">Right Arm Biceps</th>
+            <th scope="col">Left Arm Biceps</th>
+            <th scope="col">Up Waist</th>
+            <th scope="col">Waist</th>
+            <th scope="col">Down Waist</th>
+            <th scope="col">Hips</th>
+            <th scope="col">Right Thigh</th>
+            <th scope="col">Left Thigh</th>
+            <th scope="col">Right Calf</th>
+            <th scope="col">Left Calf</th>
+            <th scope="col">Neck</th>
+        </tr>
+    </thead>
+    <tbody id="ExercisesContainer">
+        @foreach (var measurement in Model.Measurements)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-secondary" asp-area="Trainee" asp-controller="Measurements" asp-action="Edit" asp-route-id="@measurement.Id">Edit</a>
+                    <form method="post" asp-area="Trainee" asp-controller="Measurements" asp-action="Delete" id="deleteForm" asp-route-id="@measurement.Id">
+                    </form>
+                    <button class="btn btn-secondary" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                </td>
+                <td>@measurement.Date</td>
+                <td>@measurement.Weight</td>
+                <td>@measurement.Chest</td>
+                <td>@measurement.RightArmBiceps</td>
+                <td>@measurement.LeftArmBiceps</td>
+                <td>@measurement.UpWaist</td>
+                <td>@measurement.Waist</td>
+                <td>@measurement.DownWaist</td>
+                <td>@measurement.Hips</td>
+                <td>@measurement.RightThigh</td>
+                <td>@measurement.LeftThigh</td>
+                <td>@measurement.RightCalf</td>
+                <td>@measurement.LeftCalf</td>
+                <td>@measurement.Neck</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>Do you want to delete selected measurement?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="deleteForm.submit()">Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -71,6 +71,7 @@
             services.AddTransient<IApplicationUserService, ApplicationUserService>();
             services.AddTransient<ITemplateProgramsService, TemplateProgramsService>();
             services.AddTransient<ITemplateProgramDetailsService, TemplateProgramDetailsService>();
+            services.AddTransient<IMeasurementService, MeasurementService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
