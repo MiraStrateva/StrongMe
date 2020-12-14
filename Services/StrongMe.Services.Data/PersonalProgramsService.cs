@@ -9,21 +9,22 @@
     using StrongMe.Services.Mapping;
     using StrongMe.Web.ViewModels.Trainee.PersonalPrograms;
 
-    public class PersonalProgramService : IPersonalProgramService
+    public class PersonalProgramsService : IPersonalProgramsService
     {
         private readonly IDeletableEntityRepository<PersonalProgram> personalProgramsRepository;
 
-        public PersonalProgramService(IDeletableEntityRepository<PersonalProgram> personalProgramsRepository)
+        public PersonalProgramsService(IDeletableEntityRepository<PersonalProgram> personalProgramsRepository)
         {
             this.personalProgramsRepository = personalProgramsRepository;
         }
 
-        public async Task CreateAsync(CreatePersonalProgramInputModel input, string userId)
+        public async Task CreateAsync(CreatePersonalProgramInputModel input)
         {
             var personalProgram = new PersonalProgram
             {
+                TemplateProgramId = input.TemplateProgramId,
                 Description = input.Description,
-                TraineeId = userId,
+                TraineeId = input.TraineeId,
             };
 
             await this.personalProgramsRepository.AddAsync(personalProgram);

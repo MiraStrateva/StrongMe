@@ -5,7 +5,7 @@
 
     using StrongMe.Web.ViewModels.Trainee.Measurements;
 
-    public interface IMeasurementService
+    public interface IMeasurementsService
     {
         Task CreateAsync(CreateMeasurmentInputModel input, string userId);
 

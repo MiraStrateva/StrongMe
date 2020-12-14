@@ -1,4 +1,5 @@
 ﻿@model StrongMe.Web.ViewModels.Instructor.TemplatePrograms.SingleTemplateProgramViewModel
+@using StrongMe.Web.ViewModels.Instructor.Common;
 @{
     this.ViewData["Title"] = Model.Name;
 }
@@ -8,9 +9,9 @@
 <div class="container">
     <div class="row">
         <a class="btn btn-secondary" asp-area="Instructor" asp-controller="TemplatePrograms" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-        <form method="post" asp-area="Instructor" asp-controller="TemplatePrograms" asp-action="Delete" id="deleteForm" asp-route-id="@Model.Id">
+        <form method="post" asp-area="Instructor" asp-controller="TemplatePrograms" asp-action="Delete" id=@($"deleteForm{Model.Id}") asp-route-id="@Model.Id">
         </form>
-        <button class="btn btn-secondary" data-toggle="modal" data-target="#deleteModal">Delete</button>
+        <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
     </div>
 </div>
 <br />
@@ -41,4 +42,7 @@
     </table>
     <hr />
 }
-<partial name="_DeleteModalPartial" model="@Model.Name" />
+@{
+    var deleteModalInpudModel = new DeleteModalInputModel() { Name = Model.Name, Id = Model.Id };
+}
+<partial name="_DeleteModalPartial" model="@deleteModalInpudModel" />

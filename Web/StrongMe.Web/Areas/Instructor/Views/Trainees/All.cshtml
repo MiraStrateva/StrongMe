@@ -1,0 +1,60 @@
+﻿@model StrongMe.Web.ViewModels.Instructor.Trainees.TraineePersonalProgramsListViewModel
+@using StrongMe.Web.ViewModels.Instructor.Common;
+@{
+    this.ViewData["Title"] = "Trainees";
+}
+
+@if (this.TempData.ContainsKey("Message"))
+{
+    <div class="alert alert-success">@this.TempData["Message"]</div>
+}
+
+<h1>@this.ViewData["Title"]</h1>
+<br />
+
+@foreach (var trainee in Model.TraineePersonalPrograms)
+{
+    <h2>@trainee.TraineeName</h2>
+    <br />
+
+    <div class="container">
+        <div class="row">
+            <a class="btn btn-secondary" asp-area="Instructor" asp-controller="Trainees" asp-action="AddPersonalProgram" asp-route-id="@trainee.TraineeId">Add Personal Program</a>
+        </div>
+
+    </div>
+    <br />
+    <div class="container">
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width:90%">Name</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var personalProgram in trainee.PersonalPrograms)
+                    {
+                        <tr>
+                            <td>@personalProgram.TemplateProgramName</td>
+                            <td>
+                                <a class="btn btn-secondary" asp-area="Instructor" asp-controller="Trainees" asp-action="EditPersonalProgram" asp-route-id="@personalProgram.Id">Edit</a>
+                            </td>
+                            <td>
+                                <form method="post" asp-area="Instructor" asp-controller="Trainees" asp-action="DeletePersonalProgram" id=@($"deleteForm{personalProgram.Id}") asp-route-id="@personalProgram.Id">
+                                </form>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                                @{ 
+                                    var deleteModalInpudModel = new DeleteModalInputModel() { Name = personalProgram.TemplateProgramName, Id = personalProgram.Id };
+                                }
+                                <partial name="_DeleteModalPartial" model=@deleteModalInpudModel  />
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}

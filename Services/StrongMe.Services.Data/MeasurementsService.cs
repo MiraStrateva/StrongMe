@@ -10,12 +10,12 @@
     using StrongMe.Services.Mapping;
     using StrongMe.Web.ViewModels.Trainee.Measurements;
 
-    public class MeasurementService : IMeasurementService
+    public class MeasurementsService : IMeasurementsService
     {
         private readonly IDeletableEntityRepository<Measurement> measurementsRepository;
         private readonly IMapper mapper;
 
-        public MeasurementService(IDeletableEntityRepository<Measurement> measurementsRepository)
+        public MeasurementsService(IDeletableEntityRepository<Measurement> measurementsRepository)
         {
             this.measurementsRepository = measurementsRepository;
             this.mapper = AutoMapperConfig.MapperInstance;

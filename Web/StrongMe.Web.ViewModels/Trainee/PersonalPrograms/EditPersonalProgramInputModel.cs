@@ -6,7 +6,5 @@
     public class EditPersonalProgramInputModel : BasePersonalProgramInputModel, IMapFrom<PersonalProgram>, IMapTo<PersonalProgram>
     {
         public int Id { get; set; }
-
-        public string TraineeId { get; set; }
     }
 }

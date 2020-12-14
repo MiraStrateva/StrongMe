@@ -5,7 +5,7 @@
 
     using StrongMe.Web.ViewModels.Trainee.PersonalPrograms;
 
-    public interface IPersonalProgramService
+    public interface IPersonalProgramsService
     {
         IEnumerable<T> GetAll<T>(string userId);
 
@@ -13,7 +13,7 @@
 
         Task UpdateAsync(int id, EditPersonalProgramInputModel input);
 
-        Task CreateAsync(CreatePersonalProgramInputModel input, string userId);
+        Task CreateAsync(CreatePersonalProgramInputModel input);
 
         Task DeleteAsync(int id);
     }

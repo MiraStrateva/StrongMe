@@ -1,4 +1,5 @@
 ﻿@model StrongMe.Web.ViewModels.Instructor.Exercises.EditExerciseInputModel
+@using StrongMe.Web.ViewModels.Instructor.Common;
 @{
     ViewData["Title"] = "Edit exercise";
     var categoryItems = this.Model.CategoriesItems.Select(x => new SelectListItem(x.Value, x.Key));
@@ -35,15 +36,31 @@
     </div>
     <hr />
     <input type="hidden" asp-for="Id" />
-    <input type="submit" class="btn btn-success" value="Save changes"/>
+    <input type="submit" class="btn btn-success" value="Save changes" />
 </form>
 <hr />
-<div class="row">
-    @foreach (var image in this.Model.Images)
-    {
-        <form method="post" asp-controller="Exercises" asp-action="DeleteImage" id="deleteForm" asp-route-id="@image.Id">
-            <img class="card-img-top img-fluid" src="@image.ImageUrl" style="height: 150px; width: 30%; display: block;">
-            <input type="submit" class="btn btn-sm btn-outline-secondary" value="Delete" />
-        </form>
-    }
+<div class="album py-5 bg-light col-md-12">
+    <div class="container">
+        <div class="row">
+            @{
+                var index = 0;
+            }
+            @foreach (var image in this.Model.Images)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top img-fluid" src="@image.ImageUrl" style="height: 150px;">
+                        <form method="post" asp-area="Instructor" asp-controller="Exercises" asp-action="DeleteImage" id=@($"deleteForm{index}") asp-route-id="@image.Id">
+                        </form>
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                        @{
+                            var deleteModalInpudModel = new DeleteModalInputModel() { Name = "selected image", Id = index };
+                            index++;
+                        }
+                        <partial name="_DeleteModalPartial" model="@deleteModalInpudModel" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </div>

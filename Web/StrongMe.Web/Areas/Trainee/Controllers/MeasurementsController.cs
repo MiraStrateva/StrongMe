@@ -16,10 +16,10 @@
     [Authorize(Roles = GlobalConstants.TraineeRoleName)]
     public class MeasurementsController : BaseController
     {
-        private readonly IMeasurementService measurementService;
+        private readonly IMeasurementsService measurementService;
         private readonly UserManager<ApplicationUser> userManager;
 
-        public MeasurementsController(IMeasurementService measurementService, UserManager<ApplicationUser> userManager)
+        public MeasurementsController(IMeasurementsService measurementService, UserManager<ApplicationUser> userManager)
         {
             this.measurementService = measurementService;
             this.userManager = userManager;

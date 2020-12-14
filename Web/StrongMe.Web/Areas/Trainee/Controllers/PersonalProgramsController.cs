@@ -15,10 +15,10 @@
     [Authorize(Roles = GlobalConstants.TraineeRoleName)]
     public class PersonalProgramsController : BaseController
     {
-        private readonly IPersonalProgramService personalProgramService;
+        private readonly IPersonalProgramsService personalProgramService;
         private readonly UserManager<ApplicationUser> userManager;
 
-        public PersonalProgramsController(IPersonalProgramService personalProgramService, UserManager<ApplicationUser> userManager)
+        public PersonalProgramsController(IPersonalProgramsService personalProgramService, UserManager<ApplicationUser> userManager)
         {
             this.personalProgramService = personalProgramService;
             this.userManager = userManager;

@@ -7,6 +7,8 @@
 
     public interface ITemplateProgramsService
     {
+        IEnumerable<KeyValuePair<string, string>> GetAllAsKeyValuePairs();
+
         int GetCount();
 
         IEnumerable<T> GetAll<T>(int page, int itemsPerPage, string userId);
