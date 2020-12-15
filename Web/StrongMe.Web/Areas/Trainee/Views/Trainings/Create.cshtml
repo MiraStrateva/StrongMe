@@ -1,0 +1,23 @@
+﻿@model StrongMe.Web.ViewModels.Trainee.Trainings.CreateTrainingInputModel
+@{
+    this.ViewData["Title"] = "Add new training";
+    var personalPrograms = this.Model.PersonalPrograms.Select(x => new SelectListItem(x.Value, x.Key));
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" class="col-md-6 offset-md-3"
+      enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Date"></label>
+        <input asp-for="Date" class="form-control" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PersonalProgramId"></label>
+        <select asp-for="PersonalProgramId" class="form-control" asp-items="personalPrograms"></select>
+        <span asp-validation-for="PersonalProgramId" class="text-danger"></span>
+    </div>
+    <input type="submit" class="btn btn-primary" />
+</form>

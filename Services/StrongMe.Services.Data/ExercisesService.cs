@@ -66,7 +66,7 @@
 
         public int GetCount()
         {
-            return this.exercisesRepository.All().Count();
+            return this.exercisesRepository.AllAsNoTracking().Count();
         }
 
         public IEnumerable<T> GetAll<T>(int page, int itemsPerPage, string userId)

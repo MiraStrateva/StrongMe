@@ -82,7 +82,7 @@
 
         public int GetCount()
         {
-            return this.templateProgramsRepository.All().Count();
+            return this.templateProgramsRepository.AllAsNoTracking().Count();
         }
 
         public async Task UpdateAsync(int id, EditTemplateProgramInputModel input)

@@ -58,7 +58,7 @@
 
         public int GetCount()
         {
-            return this.measurementsRepository.All().Count();
+            return this.measurementsRepository.AllAsNoTracking().Count();
         }
 
         public async Task UpdateAsync(MeasurementInputModel input)

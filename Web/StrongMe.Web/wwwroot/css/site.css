@@ -42,16 +42,15 @@ html {
 }
 
 body {
+    background: white;
+    background: linear-gradient(to bottom, white, grey);
     margin-bottom: 60px;
-    /*background: url('/Images/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    font-weight: bold;*/
 }
-.main-container {
-    /*background-color:white;*/
-    color:darkslategrey;
+
+.display-4 {
+    color: #007bff;
 }
+
 .footer {
     position: absolute;
     bottom: 0;

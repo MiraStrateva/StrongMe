@@ -48,6 +48,18 @@
             return personalPrograms;
         }
 
+        public IEnumerable<KeyValuePair<string, string>> GetAllAsKeyValuePairs()
+        {
+            return this.personalProgramsRepository.AllAsNoTracking()
+                .Select(x => new
+                {
+                    x.Id,
+                    x.TemplateProgram.Name,
+                })
+                .OrderBy(x => x.Name)
+                .ToList().Select(x => new KeyValuePair<string, string>(x.Id.ToString(), x.Name));
+        }
+
         public T GetById<T>(int id)
         {
             var personalProgram = this.personalProgramsRepository.AllAsNoTracking()
