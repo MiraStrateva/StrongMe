@@ -67,3 +67,23 @@ body {
     max-height: 600px;
     overflow: auto;
 }
+
+.img-card-album {
+    height: 225px; 
+    width: 100%; 
+    display: block;
+}
+
+.exercise-img {
+    height: 150px;
+}
+
+/* Other
+-------------------------------------------------- */
+.col-90 {
+    width:90%;
+}
+
+.home-img {
+    height:400px;
+}
