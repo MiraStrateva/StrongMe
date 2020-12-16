@@ -151,5 +151,16 @@
             // TO DO: Delete the physical image
             return image.ExerciseId;
         }
+
+        public IEnumerable<T> GetAll<T>(string userId, int categoryId = 0, int bodyPartId = 0)
+        {
+            var exercises = this.exercisesRepository.AllAsNoTracking()
+                .Where(x => x.TrainerId == userId && (categoryId == 0 || x.CategoryId == categoryId) && (bodyPartId == 0 || x.BodyPartId == bodyPartId))
+                .OrderBy(x => x.CategoryId)
+                .ThenBy(x => x.BodyPartId)
+                .ThenBy(x => x.Name)
+                .To<T>().ToList();
+            return exercises;
+        }
     }
 }

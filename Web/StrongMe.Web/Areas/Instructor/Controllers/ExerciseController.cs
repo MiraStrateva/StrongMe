@@ -9,7 +9,8 @@
     {
         private readonly IExercisesService exercisesService;
 
-        public ExerciseController(IExercisesService exercisesService)
+        public ExerciseController(
+            IExercisesService exercisesService)
         {
             this.exercisesService = exercisesService;
         }

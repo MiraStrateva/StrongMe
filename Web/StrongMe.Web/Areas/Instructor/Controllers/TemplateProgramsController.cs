@@ -73,23 +73,23 @@
         {
             var user = await this.userManager.GetUserAsync(this.User);
 
-            // var categoriesItems = new List<KeyValuePair<string, string>>()
-            //                            {
-            //                                new KeyValuePair<string, string>("0", "All"),
-            //                            };
-            // categoriesItems.AddRange(this.categoriesService.GetAllAsKeyValuePairs());
+            var categoriesItems = new List<KeyValuePair<string, string>>()
+                                        {
+                                            new KeyValuePair<string, string>("0", "All"),
+                                        };
+            categoriesItems.AddRange(this.categoriesService.GetAllAsKeyValuePairs());
 
-            // var bodyPartsItems = new List<KeyValuePair<string, string>>()
-            //                            {
-            //                                new KeyValuePair<string, string>("0", "All"),
-            //                            };
-            // bodyPartsItems.AddRange(this.bodyPartsService.GetAllAsKeyValuePairs());
+            var bodyPartsItems = new List<KeyValuePair<string, string>>()
+                                        {
+                                            new KeyValuePair<string, string>("0", "All"),
+                                        };
+            bodyPartsItems.AddRange(this.bodyPartsService.GetAllAsKeyValuePairs());
             var viewModel = new CreateTemplateProgramInputModel()
             {
                 ExerciseList = new SelectExerciseViewModel()
                 {
-                    // CategoriesItems = categoriesItems,
-                    // BodyPartsItems = bodyPartsItems,
+                    CategoriesItems = categoriesItems,
+                    BodyPartsItems = bodyPartsItems,
                     ExercisesItems = this.exercisesService.GetAll<SingleExerciseViewModel>(user.Id),
                 },
             };
@@ -132,11 +132,23 @@
         {
             var inputModel = this.templateProgramsService.GetById<EditTemplateProgramInputModel>(id);
 
+            var categoriesItems = new List<KeyValuePair<string, string>>()
+                                        {
+                                            new KeyValuePair<string, string>("0", "All"),
+                                        };
+            categoriesItems.AddRange(this.categoriesService.GetAllAsKeyValuePairs());
+
+            var bodyPartsItems = new List<KeyValuePair<string, string>>()
+                                        {
+                                            new KeyValuePair<string, string>("0", "All"),
+                                        };
+            bodyPartsItems.AddRange(this.bodyPartsService.GetAllAsKeyValuePairs());
+
             var user = await this.userManager.GetUserAsync(this.User);
             inputModel.ExerciseList = new SelectExerciseViewModel()
             {
-                // CategoriesItems = categoriesItems,
-                // BodyPartsItems = bodyPartsItems,
+                CategoriesItems = categoriesItems,
+                BodyPartsItems = bodyPartsItems,
                 ExercisesItems = this.exercisesService.GetAll<SingleExerciseViewModel>(user.Id),
             };
 

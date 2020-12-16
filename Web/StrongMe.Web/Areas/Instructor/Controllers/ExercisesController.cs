@@ -14,6 +14,7 @@
     using StrongMe.Data.Models;
     using StrongMe.Services.Data;
     using StrongMe.Web.Controllers;
+    using StrongMe.Web.ViewModels.Instructor.Common;
     using StrongMe.Web.ViewModels.Instructor.Exercises;
 
     [Area("Instructor")]
@@ -119,6 +120,14 @@
             };
 
             return this.View(nameof(this.All), viewModel);
+        }
+
+        public async Task<IActionResult> List([FromQuery] int categoryId, [FromQuery] int bodyPartId)
+        {
+            var user = await this.userManager.GetUserAsync(this.User);
+            var exercisesItems = this.exercisesService.GetAll<SingleExerciseViewModel>(user.Id, categoryId, bodyPartId);
+
+            return this.PartialView("_ExerciseListPartial", exercisesItems);
         }
 
         public IActionResult Create()

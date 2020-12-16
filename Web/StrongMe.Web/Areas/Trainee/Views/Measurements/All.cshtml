@@ -43,10 +43,12 @@
         {
             <tr>
                 <td>
-                    <a class="btn btn-secondary" asp-area="Trainee" asp-controller="Measurements" asp-action="Edit" asp-route-id="@measurement.Id">Edit</a>
-                    <form method="post" asp-area="Trainee" asp-controller="Measurements" asp-action="Delete" id=@($"deleteForm{measurement.Id}") asp-route-id="@measurement.Id">
-                    </form>
-                    <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                    <div class="btn-group">
+                        <a class="btn btn-secondary" asp-area="Trainee" asp-controller="Measurements" asp-action="Edit" asp-route-id="@measurement.Id">Edit</a>
+                        <form method="post" asp-area="Trainee" asp-controller="Measurements" asp-action="Delete" id=@($"deleteForm{measurement.Id}") asp-route-id="@measurement.Id">
+                        </form>
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                    </div>
                     <div class="modal" tabindex="-1" role="dialog" id="deleteModal">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -79,3 +81,4 @@
         }
     </tbody>
 </table>
+<partial name="_PagingPartial" model="@Model" />

@@ -15,6 +15,8 @@
 
         IEnumerable<T> GetAll<T>(string userId);
 
+        IEnumerable<T> GetAll<T>(string userId, int categoryId, int bodyPartId);
+
         T GetById<T>(int id);
 
         Task UpdateAsync(int id, EditExerciseInputModel input, string userId, string imagePath);

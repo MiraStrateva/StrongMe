@@ -10,6 +10,6 @@
 
         public const string TraineeRoleName = "Trainee";
 
-        public const int ItemsPerPage = 12;
+        public const int ItemsPerPage = 6;
     }
 }
