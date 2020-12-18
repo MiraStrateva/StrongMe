@@ -27,7 +27,7 @@
 
         public async Task CreateAsync(CreateExerciseInputModel input, string userId, string imagePath)
         {
-            var recipe = new Exercise
+            var exercise = new Exercise
             {
                 CategoryId = input.CategoryId,
                 BodyPartId = input.BodyPartId,
@@ -52,7 +52,7 @@
                         AddedByUserId = userId,
                         Extension = extension,
                     };
-                    recipe.Images.Add(dbImage);
+                    exercise.Images.Add(dbImage);
 
                     var physicalPath = $"{imagePath}/exercises/{dbImage.Id}.{extension}";
                     using Stream fileStream = new FileStream(physicalPath, FileMode.Create);
@@ -60,7 +60,7 @@
                 }
             }
 
-            await this.exercisesRepository.AddAsync(recipe);
+            await this.exercisesRepository.AddAsync(exercise);
             await this.exercisesRepository.SaveChangesAsync();
         }
 

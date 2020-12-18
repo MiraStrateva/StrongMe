@@ -9,12 +9,10 @@
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-
     using StrongMe.Common;
     using StrongMe.Data.Models;
     using StrongMe.Services.Data;
     using StrongMe.Web.Controllers;
-    using StrongMe.Web.ViewModels.Instructor.Common;
     using StrongMe.Web.ViewModels.Instructor.Exercises;
 
     [Area("Instructor")]
