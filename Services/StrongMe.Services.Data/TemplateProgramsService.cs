@@ -59,9 +59,10 @@
             return templatePrograms;
         }
 
-        public IEnumerable<KeyValuePair<string, string>> GetAllAsKeyValuePairs()
+        public IEnumerable<KeyValuePair<string, string>> GetAllAsKeyValuePairs(string userId)
         {
             return this.templateProgramsRepository.AllAsNoTracking()
+                .Where(x => x.TrainerId == userId)
                 .Select(x => new
                 {
                     x.Id,

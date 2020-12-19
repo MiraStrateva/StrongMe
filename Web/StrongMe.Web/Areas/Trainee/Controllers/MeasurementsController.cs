@@ -37,7 +37,7 @@
             {
                 ItemsPerPage = GlobalConstants.ItemsPerPage,
                 PageNumber = id,
-                ItemsCount = this.measurementService.GetCount(),
+                ItemsCount = this.measurementService.GetCount(user.Id),
                 Measurements = this.measurementService.GetAll<MeasurementInputModel>(id, GlobalConstants.ItemsPerPage, user.Id),
             };
 

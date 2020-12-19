@@ -56,9 +56,11 @@
             return measurement;
         }
 
-        public int GetCount()
+        public int GetCount(string userId)
         {
-            return this.measurementsRepository.AllAsNoTracking().Count();
+            return this.measurementsRepository.AllAsNoTracking()
+                .Where(x => x.TraineeId == userId)
+                .Count();
         }
 
         public async Task UpdateAsync(MeasurementInputModel input)

@@ -138,12 +138,12 @@
             var service = new TrainingsService(trainingRepository.Object);
 
             // Act & Assert
-            Assert.Equal(3, service.GetCount());
+            Assert.Equal(3, service.GetCount(userId));
             trainingRepository.Verify(x => x.AllAsNoTracking(), Times.Once);
         }
 
         [Fact]
-        public void GetCountShouldReturnZeroWhenNoRecords()
+        public void GetCount_ShouldReturnZeroWhenNoRecords()
         {
             // Arrange
             var trainingRepository = new Mock<IDeletableEntityRepository<Training>>();
@@ -152,7 +152,23 @@
             var service = new TrainingsService(trainingRepository.Object);
 
             // Act & Assert
-            Assert.Equal(0, service.GetCount());
+            Assert.Equal(0, service.GetCount(Guid.NewGuid().ToString()));
+            trainingRepository.Verify(x => x.AllAsNoTracking(), Times.Once);
+        }
+
+        [Fact]
+        public void GetCountShouldReturnZeroWhenNoRecordsForCurrentUser()
+        {
+            // Arrange
+            var trainingRepository = new Mock<IDeletableEntityRepository<Training>>();
+            var userId = Guid.NewGuid().ToString();
+            var recordCount = 2;
+            trainingRepository.Setup(r => r.AllAsNoTracking()).Returns(this.GetTrainings(recordCount, userId).AsQueryable());
+
+            var service = new TrainingsService(trainingRepository.Object);
+
+            // Act & Assert
+            Assert.Equal(0, service.GetCount(Guid.NewGuid().ToString()));
             trainingRepository.Verify(x => x.AllAsNoTracking(), Times.Once);
         }
 
@@ -167,16 +183,16 @@
                     Id = i,
                     TraineeId = userId,
                     Date = DateTime.Now,
-                    PersonalProgramId = 1, 
+                    PersonalProgramId = 1,
                     PersonalProgram = new PersonalProgram()
                     {
-                        Id = 1, 
+                        Id = 1,
                         TemplateProgram = new TemplateProgram()
                         {
-                            Id = 1, 
+                            Id = 1,
                             Name = "TemplateProgram",
-                        }
-                    }
+                        },
+                    },
                 });
             }
 

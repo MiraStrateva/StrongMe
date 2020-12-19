@@ -64,9 +64,11 @@
             await this.exercisesRepository.SaveChangesAsync();
         }
 
-        public int GetCount()
+        public int GetCount(string userId)
         {
-            return this.exercisesRepository.AllAsNoTracking().Count();
+            return this.exercisesRepository.AllAsNoTracking()
+                .Where(x => x.TrainerId == userId)
+                .Count();
         }
 
         public IEnumerable<T> GetAll<T>(int page, int itemsPerPage, string userId)

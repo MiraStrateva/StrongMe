@@ -9,7 +9,7 @@
     {
         Task CreateAsync(CreateTrainingInputModel input, string userId);
 
-        int GetCount();
+        int GetCount(string userId);
 
         IEnumerable<T> GetAll<T>(int page, int itemsPerPage, string userId);
 

@@ -7,7 +7,7 @@
 
     public interface ITemplateProgramsService
     {
-        IEnumerable<KeyValuePair<string, string>> GetAllAsKeyValuePairs();
+        IEnumerable<KeyValuePair<string, string>> GetAllAsKeyValuePairs(string userId);
 
         int GetCount();
 

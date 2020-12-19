@@ -45,12 +45,13 @@
             return this.View(viewModel);
         }
 
-        public IActionResult AddPersonalProgram(string id)
+        public async Task<IActionResult> AddPersonalProgram(string id)
         {
+            var user = await this.userManager.GetUserAsync(this.User);
             var viewModel = new CreatePersonalProgramInputModel()
             {
                 TraineeId = id,
-                TemplatePrograms = this.templateProgramsService.GetAllAsKeyValuePairs(),
+                TemplatePrograms = this.templateProgramsService.GetAllAsKeyValuePairs(user.Id),
             };
             return this.View(viewModel);
         }
@@ -58,9 +59,10 @@
         [HttpPost]
         public async Task<IActionResult> AddPersonalProgram(CreatePersonalProgramInputModel input)
         {
+            var user = await this.userManager.GetUserAsync(this.User);
             if (!this.ModelState.IsValid)
             {
-                input.TemplatePrograms = this.templateProgramsService.GetAllAsKeyValuePairs();
+                input.TemplatePrograms = this.templateProgramsService.GetAllAsKeyValuePairs(user.Id);
                 return this.View(input);
             }
 
@@ -71,7 +73,7 @@
             catch (Exception ex)
             {
                 this.ModelState.AddModelError(string.Empty, ex.Message);
-                input.TemplatePrograms = this.templateProgramsService.GetAllAsKeyValuePairs();
+                input.TemplatePrograms = this.templateProgramsService.GetAllAsKeyValuePairs(user.Id);
                 return this.View(input);
             }
 
@@ -90,10 +92,11 @@
             return this.RedirectToAction(nameof(this.All));
         }
 
-        public IActionResult EditPersonalProgram(int id)
+        public async Task<IActionResult> EditPersonalProgram(int id)
         {
+            var user = await this.userManager.GetUserAsync(this.User);
             var inputModel = this.personalProgramsService.GetById<EditPersonalProgramInputModel>(id);
-            inputModel.TemplatePrograms = this.templateProgramsService.GetAllAsKeyValuePairs();
+            inputModel.TemplatePrograms = this.templateProgramsService.GetAllAsKeyValuePairs(user.Id);
 
             return this.View(inputModel);
         }
@@ -103,7 +106,8 @@
         {
             if (!this.ModelState.IsValid)
             {
-                input.TemplatePrograms = this.templateProgramsService.GetAllAsKeyValuePairs();
+                var user = await this.userManager.GetUserAsync(this.User);
+                input.TemplatePrograms = this.templateProgramsService.GetAllAsKeyValuePairs(user.Id);
                 return this.View(input);
             }
 

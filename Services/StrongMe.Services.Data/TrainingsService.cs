@@ -56,9 +56,11 @@
             return training;
         }
 
-        public int GetCount()
+        public int GetCount(string userId)
         {
-            return this.trainingsRepository.AllAsNoTracking().Count();
+            return this.trainingsRepository.AllAsNoTracking()
+                .Where(x => x.TraineeId == userId)
+                .Count();
         }
 
         public async Task UpdateAsync(TrainingInputModel input)

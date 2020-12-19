@@ -7,7 +7,7 @@
 
     public interface IPersonalProgramsService
     {
-        IEnumerable<KeyValuePair<string, string>> GetAllAsKeyValuePairs();
+        IEnumerable<KeyValuePair<string, string>> GetAllAsKeyValuePairs(string userId);
 
         IEnumerable<T> GetAll<T>(string userId);
 

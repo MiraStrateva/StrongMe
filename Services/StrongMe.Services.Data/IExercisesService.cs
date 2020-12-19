@@ -9,7 +9,7 @@
     {
         Task CreateAsync(CreateExerciseInputModel input, string userId, string imagePath);
 
-        int GetCount();
+        int GetCount(string userId);
 
         IEnumerable<T> GetAll<T>(int page, int itemsPerPage, string userId);
 

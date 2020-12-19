@@ -52,7 +52,7 @@
             {
                 ItemsPerPage = GlobalConstants.ItemsPerPage,
                 PageNumber = id,
-                ItemsCount = this.exercisesService.GetCount(),
+                ItemsCount = this.exercisesService.GetCount(user.Id),
                 ExerciseGroups = new List<ExerciseByGroupListViewModel>()
                 {
                     new ExerciseByGroupListViewModel
@@ -79,7 +79,7 @@
             {
                 ItemsPerPage = GlobalConstants.ItemsPerPage,
                 PageNumber = id,
-                ItemsCount = this.exercisesService.GetCount(),
+                ItemsCount = this.exercisesService.GetCount(user.Id),
                 ExerciseGroups = this.exercisesService
                 .GetAll<ExerciseInListViewModel>(id, GlobalConstants.ItemsPerPage, user.Id)
                 .GroupBy(e => e.CategoryName)
@@ -106,7 +106,7 @@
             {
                 ItemsPerPage = GlobalConstants.ItemsPerPage,
                 PageNumber = id,
-                ItemsCount = this.exercisesService.GetCount(),
+                ItemsCount = this.exercisesService.GetCount(user.Id),
                 ExerciseGroups = this.exercisesService
                 .GetAll<ExerciseInListViewModel>(id, GlobalConstants.ItemsPerPage, user.Id)
                 .GroupBy(e => e.BodyPartName)

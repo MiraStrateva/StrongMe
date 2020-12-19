@@ -48,9 +48,10 @@
             return personalPrograms;
         }
 
-        public IEnumerable<KeyValuePair<string, string>> GetAllAsKeyValuePairs()
+        public IEnumerable<KeyValuePair<string, string>> GetAllAsKeyValuePairs(string userId)
         {
             return this.personalProgramsRepository.AllAsNoTracking()
+                .Where(x => x.TraineeId == userId)
                 .Select(x => new
                 {
                     x.Id,

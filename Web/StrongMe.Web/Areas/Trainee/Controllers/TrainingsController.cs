@@ -42,18 +42,19 @@
             {
                 ItemsPerPage = GlobalConstants.ItemsPerPage,
                 PageNumber = id,
-                ItemsCount = this.trainingsService.GetCount(),
+                ItemsCount = this.trainingsService.GetCount(user.Id),
                 Trainings = this.trainingsService.GetAll<TrainingInputModel>(id, GlobalConstants.ItemsPerPage, user.Id),
             };
 
             return this.View(viewModel);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var user = await this.userManager.GetUserAsync(this.User);
             var viewModel = new CreateTrainingInputModel()
             {
-                PersonalPrograms = this.personalProgramsService.GetAllAsKeyValuePairs(),
+                PersonalPrograms = this.personalProgramsService.GetAllAsKeyValuePairs(user.Id),
             };
 
             return this.View(viewModel);
@@ -62,13 +63,12 @@
         [HttpPost]
         public async Task<IActionResult> Create(CreateTrainingInputModel input)
         {
+            var user = await this.userManager.GetUserAsync(this.User);
             if (!this.ModelState.IsValid)
             {
-                input.PersonalPrograms = this.personalProgramsService.GetAllAsKeyValuePairs();
+                input.PersonalPrograms = this.personalProgramsService.GetAllAsKeyValuePairs(user.Id);
                 return this.View(input);
             }
-
-            var user = await this.userManager.GetUserAsync(this.User);
 
             try
             {
@@ -77,7 +77,7 @@
             catch (Exception ex)
             {
                 this.ModelState.AddModelError(string.Empty, ex.Message);
-                input.PersonalPrograms = this.personalProgramsService.GetAllAsKeyValuePairs();
+                input.PersonalPrograms = this.personalProgramsService.GetAllAsKeyValuePairs(user.Id);
                 return this.View(input);
             }
 
@@ -86,10 +86,11 @@
             return this.RedirectToAction("All");
         }
 
-        public IActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
+            var user = await this.userManager.GetUserAsync(this.User);
             var inputModel = this.trainingsService.GetById<TrainingInputModel>(id);
-            inputModel.PersonalPrograms = this.personalProgramsService.GetAllAsKeyValuePairs();
+            inputModel.PersonalPrograms = this.personalProgramsService.GetAllAsKeyValuePairs(user.Id);
 
             return this.View(inputModel);
         }
@@ -97,9 +98,10 @@
         [HttpPost]
         public async Task<IActionResult> Edit(int id, TrainingInputModel input)
         {
+            var user = await this.userManager.GetUserAsync(this.User);
             if (!this.ModelState.IsValid)
             {
-                input.PersonalPrograms = this.personalProgramsService.GetAllAsKeyValuePairs();
+                input.PersonalPrograms = this.personalProgramsService.GetAllAsKeyValuePairs(user.Id);
                 return this.View(input);
             }
 
@@ -110,7 +112,7 @@
             catch (Exception ex)
             {
                 this.ModelState.AddModelError(string.Empty, ex.Message);
-                input.PersonalPrograms = this.personalProgramsService.GetAllAsKeyValuePairs();
+                input.PersonalPrograms = this.personalProgramsService.GetAllAsKeyValuePairs(user.Id);
                 return this.View(input);
             }
 

@@ -1,15 +1,13 @@
-﻿using Moq;
-using StrongMe.Data.Common.Repositories;
-using StrongMe.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace StrongMe.Services.Data.Tests
+﻿namespace StrongMe.Services.Data.Tests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using Moq;
+    using StrongMe.Data.Common.Repositories;
+    using StrongMe.Data.Models;
+    using Xunit;
+
     public class CategoriesServiceTests
     {
         [Fact]
