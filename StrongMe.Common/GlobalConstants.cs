@@ -11,5 +11,7 @@
         public const string TraineeRoleName = "Trainee";
 
         public const int ItemsPerPage = 6;
+
+        public const string ValidationRageMessage = "{0} Must be between {1} to {2}";
     }
 }

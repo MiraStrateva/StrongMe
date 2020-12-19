@@ -1,5 +1,6 @@
 ﻿namespace StrongMe.Web.ViewModels.Instructor.TemplatePrograms
 {
+    using StrongMe.Common;
     using System;
     using System.ComponentModel.DataAnnotations;
 
@@ -11,13 +12,13 @@
         public string ExerciseName { get; set; }
 
         [Required]
-        [Range(1, 10, ErrorMessage = "Value for {0} must be between {1} and {2}.")]
+        [Range(1, 10, ErrorMessage = GlobalConstants.ValidationRageMessage)]
         public int SeriesCount { get; set; }
 
-        [Range(0, 30, ErrorMessage = "Value for {0} must be between {1} and {2}.")]
+        [Range(0, 30, ErrorMessage = GlobalConstants.ValidationRageMessage)]
         public int Repetitions { get; set; }
 
-        [Range(0, 120, ErrorMessage = "Value for {0} must be between {1} and {2} seconds.")]
+        [Range(0, 120, ErrorMessage = GlobalConstants.ValidationRageMessage)]
         public int Break { get; set; }
     }
 }
