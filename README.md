@@ -1,22 +1,22 @@
 # Strong Me
 
-Strong Me is a training system. The idea is to provide an opportunity to have an online personal trainer, receive personal training programs, regular feedback on your progress, advices and easy attachements of your personal training programs and diets. The trainee should provide his measures regularely and should point out his trainings.
+Strong Me is a training system. The idea is to provide an opportunity to have an online personal trainer, receive personal training programs, regular feedback on your progress, advices and easy attachments of your personal training programs and diets. The trainee should provide his measures regularly and should point out his trainings.
 
 The system has 3 types of Users: Administrator, Trainer and Trainee.
 
-When you register in a system you are automatically assigne as a Trainee and you can start your work:
+When you register in a system you are automatically assigned as a Trainer and you can start your work:
 - Add your exercise database. Each exercise should be arranged in some predefined Categories and BodyParts, have a name, description and images;
 - Add your template training programs. The idea of the templates is to have some predefined set of exercises which can be used when a personal program is created.
 - Invite your trainees. Each trainer is given a unique code which is included in the invitation link. Following the link will help to each trainee to register for his trainer.
 - Assign personal training programs to his trainees.
-- Follow the progress of his trainees (measurements, trainings) /not implemented yet, the idea is to have some dashboard where trainer will see his trainees, theirs measuremens, messages and trainings/
+- Follow the progress of his trainees (measurements, trainings) /not implemented yet, the idea is to have some dashboard where trainer will see his trainees, theirs measurements, messages and trainings/
 - Write some feedback and advice to his trainees /not implemented
 - Adjust the personal trainings of his trainees
 
 The trainee will be able to:
 - see all personal training programs assigned from his trainer
 - write down his measures
-- write down his tranings 
+- write down his trainings 
 
 I have also thought for some message exchange functionality or live chat, or both - still not implemented. 
 
